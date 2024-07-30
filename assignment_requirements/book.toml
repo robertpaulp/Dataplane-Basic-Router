@@ -1,0 +1,24 @@
+[book]
+authors = [""]
+language = "en"
+multilingual = false
+src = "src"
+title = "Protocoale de Comunicație 🌐"
+
+[build]
+build-dir = "public"
+
+[output.html]
+additional-css = ["./assets/custom.css", "tabbed-code-blocks.css"]
+additional-js = ["tabbed-code-blocks.js"]
+mathjax-support = true
+git-repository-url = "https://gitlab.cs.pub.ro/pcom/tema1"
+edit-url-template = "https://gitlab.cs.pub.ro/pcom/tema1/edit/main/{path}"
+
+[preprocessor.toc]
+command = "./mdbook-toc"
+renderer = ["html"]
+
+[output.html.fold]
+enable = true
+level = 0

@@ -1,0 +1,17 @@
+image: ubuntu:jammy
+
+pages:
+  stage: deploy
+  script:
+  - apt update
+  - apt install -y wget
+  - wget https://github.com/badboy/mdbook-toc/releases/download/0.11.0/mdbook-toc-0.11.0-x86_64-unknown-linux-gnu.tar.gz
+  - wget https://github.com/rust-lang/mdBook/releases/download/v0.4.27/mdbook-v0.4.27-x86_64-unknown-linux-gnu.tar.gz
+  - tar xvzf mdbook-toc-0.11.0-x86_64-unknown-linux-gnu.tar.gz
+  - tar xvzf mdbook-v0.4.27-x86_64-unknown-linux-gnu.tar.gz
+  - ./mdbook build
+  artifacts:
+    paths:
+    - public
+  only:
+  - main
